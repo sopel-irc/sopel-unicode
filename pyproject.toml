@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["sopel_unicode", "sopel_unicode.*"]
+namespaces = false
+
+[tool.setuptools.dynamic]
+readme = { file=["README.rst", "NEWS"], content-type="text/x-rst" }
+
+[project]
+name = "sopel-unicode"
+version = "1.0.0"
+description = "Unicode information lookup plugin for Sopel"
+keywords = [
+  "sopel",
+  "plugin",
+  "bot",
+  "irc",
+]
+maintainers = [
+  { name="SnoopJ", email="snoopjedi@gmail.com" },
+]
+authors = [
+  { name="SnoopJ", email="snoopjedi@gmail.com" },
+]
+
+dynamic = ["readme"]
+license = { text="EFL-2.0" }
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: Eiffel Forum License (EFL)",
+    "License :: OSI Approved :: Eiffel Forum License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Communications :: Chat :: Internet Relay Chat",
+]
+requires-python = ">=3.8, <4"
+dependencies = ["sopel>=7.1"]
+
+[project.urls]
+"Homepage" = "https://github.com/snoopj/sopel-unicode"
+"Bug Tracker" = "https://github.com/snoopj/sopel-unicode/issues"
+
+[project.entry-points."sopel.plugins"]
+sopel_unicode = "sopel_unicode"
