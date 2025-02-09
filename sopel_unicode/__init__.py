@@ -130,6 +130,7 @@ def normalized_forms(bot, trigger):
 
     if too_long(bot, trigger, normalized):
         bot.say(f"Can only decompose up to {bot.config.sopel_unicode.max_length} characters at a time")
+        return False
 
     for char in normalized:
         msg = describe_char(char)
