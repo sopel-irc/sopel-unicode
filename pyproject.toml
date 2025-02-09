@@ -50,4 +50,5 @@ dependencies = ["sopel>=7.1"]
 "Bug Tracker" = "https://github.com/snoopj/sopel-unicode/issues"
 
 [project.entry-points."sopel.plugins"]
-sopel_unicode = "sopel_unicode"
+unicode_info = "sopel_unicode"
+unicode_extras = "sopel_unicode.extras"
