@@ -36,8 +36,6 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Topic :: Communications :: Chat :: Internet Relay Chat",
 ]
-requires-python = ">=3.8, <4"
-dependencies = ["sopel>=7.1"]
 keywords = [
   "sopel",
   "plugin",
