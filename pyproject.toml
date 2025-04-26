@@ -1,14 +1,13 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
 
-# TODO: what is the equivalent of this if we switch to hatchling?
-#[tool.setuptools.dynamic]
-#readme = { file=["README.rst", "NEWS"], content-type="text/x-rst" }
+[tool.setuptools.packages.find]
+include = ["sopel_unicode", "sopel_unicode.*"]
+namespaces = false
 
-[tool.hatch.build.targets.wheel.force-include]
-"README.md" = "sopel_unicode/README.md"
-"NEWS" = "sopel_unicode/NEWS"
+[tool.setuptools.dynamic]
+readme = { file=["README.rst", "NEWS"], content-type="text/x-rst" }
 
 [project]
 name = "sopel-unicode"
