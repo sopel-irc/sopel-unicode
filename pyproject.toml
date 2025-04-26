@@ -13,21 +13,15 @@ readme = { file=["README.rst", "NEWS"], content-type="text/x-rst" }
 name = "sopel-unicode"
 version = "1.0.0"
 description = "Unicode information lookup plugin for Sopel"
-keywords = [
-  "sopel",
-  "plugin",
-  "bot",
-  "irc",
-]
-maintainers = [
-  { name="SnoopJ", email="snoopjedi@gmail.com" },
-]
+
 authors = [
-  { name="SnoopJ", email="snoopjedi@gmail.com" },
+  { name="SnoopJ" },
 ]
 
+license = "EFL-2.0"
+license-files = ["COPYING"]
 dynamic = ["readme"]
-license = { text="EFL-2.0" }
+
 classifiers = [
     "Intended Audience :: Developers",
     "Intended Audience :: System Administrators",
@@ -44,11 +38,21 @@ classifiers = [
 ]
 requires-python = ">=3.8, <4"
 dependencies = ["sopel>=7.1"]
+keywords = [
+  "sopel",
+  "plugin",
+  "bot",
+  "irc",
+]
+
+requires-python = ">=3.8, <4"
+dependencies = [
+#  "sopel>=8.0",
+]
 
 [project.urls]
-"Homepage" = "https://github.com/snoopj/sopel-unicode"
-"Bug Tracker" = "https://github.com/snoopj/sopel-unicode/issues"
+"Homepage" = "https://github.com/sopel-irc/sopel-unicode"
+"Bug Tracker" = "https://github.com/sopel-irc/sopel-unicode/issues"
 
 [project.entry-points."sopel.plugins"]
-unicode_info = "sopel_unicode"
-unicode_extras = "sopel_unicode.extras"
+"sopel-unicode" = "sopel_unicode.plugin"
