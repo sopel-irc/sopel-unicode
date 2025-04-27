@@ -13,6 +13,24 @@ This plugin is designed as a drop-in replacement for the built-in `unicode_info`
 [`unicodedata2`]: https://pypi.org/project/unicodedata2/
 [`unicode_age`]: https://pypi.org/project/unicode-age/
 
+## Installing
+
+Releases are hosted on PyPI, so after installing Sopel, all you need is `pip`:
+
+```shell
+$ pip install sopel-unicode
+```
+
+### Optional features
+
+`sopel-unicode` is designed to act as a drop-in replacement for the original built-in plugin on a basic installation.
+To enable all the optional features:
+
+```shell
+$ pip install sopel-unicode[all]
+```
+<!-- TODO:SnoopJ list and explain options for granular extras once CLDR is included -->
+
 ## Usage
 
 Note that output given in this section corresponds to `sopel-unicode[all]` except where noted. Output layout may differ
@@ -108,25 +126,6 @@ queries produce a large number of results.
 < terribot> [unicode] 🍎 U+1f34e RED APPLE
 < terribot> [unicode] 🍏 U+1f34f GREEN APPLE
 ```
-
-## Installing
-
-Releases are hosted on PyPI, so after installing Sopel, all you need is `pip`:
-
-```shell
-$ pip install sopel-unicode
-```
-
-### Optional features
-
-`sopel-unicode` is designed to act as a drop-in replacement for the original built-in plugin on a basic installation.
-To enable all the optional features:
-
-```shell
-$ pip install sopel-unicode[all]
-```
-
-<!-- TODO:SnoopJ list and explain options for granular extras once CLDR is included -->
 
 ## Configuring
 
