@@ -11,22 +11,22 @@ from .impl import describe_char, unicodedata
 logger = logging.getLogger(__name__)
 
 MAX_LEN = 16
-PREFIX = plugin.output_prefix('[sopel-unicode] ')
+PREFIX = plugin.output_prefix('[unicode] ')
 
 
-class UnicodeSection(types.StaticSection):
+class SopelUnicodeSection(types.StaticSection):
     max_length = types.ValidatedAttribute('max_length', parse=int, default=5)
-    """Maximum length of string input"""
-    override_channels = types.ListAttribute('override_channels')
+    """Maximum length of Unicode string input"""
+    length_override_channels = types.ListAttribute('length_override_channels')
     """Channels where max_length does not apply"""
 
 
 def setup(bot):
-    bot.settings.define_section('sopel_unicode', UnicodeSection)
+    bot.settings.define_section('sopel_unicode', SopelUnicodeSection)
 
 
 def too_long(bot, trigger, s: str) -> bool:
-    len_overrides = bot.config.sopel_unicode.override_channels
+    len_overrides = bot.config.sopel_unicode.length_override_channels
     max_len = bot.config.sopel_unicode.max_length
 
     effective_len = len(drop_uninteresting_chars(s))
