@@ -5,7 +5,7 @@ from typing import Iterable
 from sopel import plugin
 from sopel.config import types
 
-from .impl import describe_char, unicodedata
+from .impl import NAME_TO_CODEPOINT, describe_char, unicodedata
 
 
 logger = logging.getLogger(__name__)
