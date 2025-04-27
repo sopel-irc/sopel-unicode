@@ -19,6 +19,8 @@ class SopelUnicodeSection(types.StaticSection):
     """Maximum length of Unicode string input"""
     length_override_channels = types.ListAttribute('length_override_channels')
     """Channels where max_length does not apply"""
+    ignore_characters = types.ListAttribute('ignore_chars', default=[" "])
+    """Characters ignored during lookup"""
 
 
 def configure(config):
@@ -35,7 +37,7 @@ def too_long(bot, trigger, s: str) -> bool:
     len_overrides = bot.config.sopel_unicode.length_override_channels
     max_len = bot.config.sopel_unicode.max_length
 
-    effective_len = len(drop_uninteresting_chars(s))
+    effective_len = len(drop_uninteresting_chars(bot, s))
 
     # if the sender is a nick (DM), or an override channel, then it's never too long
     if not trigger.sender.is_nick() and trigger.sender not in len_overrides and effective_len > max_len:
@@ -44,19 +46,18 @@ def too_long(bot, trigger, s: str) -> bool:
     return False
 
 
-def drop_uninteresting_chars(s: str) -> str:
-    # TODO: allow users to define uninteresting chars
-    UNINTERESTING = (" ",)
-
-    return "".join(c for c in s if c not in UNINTERESTING)
+def drop_uninteresting_chars(bot, s: str) -> str:
+    drop_chars = bot.config.sopel_unicode.uninteresting_chars
+    return "".join(c for c in s if c not in drop_chars)
 
 
 @PREFIX
 @plugin.commands("unicode:search", "u:search")
 def unicode_search(bot, trigger):
     cmd = trigger.group(1)
-    s = trigger.group(0)[len(cmd)+2:].replace(" ", "")
-    s = drop_uninteresting_chars(s)
+    cmd_arg = trigger.group(0)[len(cmd)+2:].replace(" ", "")
+
+    s = drop_uninteresting_chars(bot, cmd_arg)
 
     MAX_MATCHES = 10
     NUM_PUBLIC_MATCHES = 2
@@ -96,7 +97,7 @@ def unicode_search(bot, trigger):
 def unicode_summarize(bot, trigger):
     cmd = trigger.group(1)
     s = trigger.group(2)
-    s = drop_uninteresting_chars(s)
+    s = drop_uninteresting_chars(bot, s)
 
     prefix, rest = s[:2].lower(), s[2:]
     if prefix in ("u+", "0x", r"\u"):
@@ -141,7 +142,7 @@ def normalized_forms(bot, trigger):
     s = trigger.group(2)
 
     normalized = unicodedata.normalize(form.upper(), s)
-    normalized = drop_uninteresting_chars(normalized)
+    normalized = drop_uninteresting_chars(bot, normalized)
 
     if too_long(bot, trigger, normalized):
         bot.say(f"Can only decompose up to {bot.config.sopel_unicode.max_length} characters at a time")

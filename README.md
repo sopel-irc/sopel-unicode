@@ -20,8 +20,8 @@ if some optional dependencies are missing.
 
 ### Codepoint lookup
 
-The `unicode` (short-form `u`) command provides lookup of codepoints in a provided string. "Uninteresting" characters
-are ignored, which currently consists only of `U+0020 SPACE (" ")`.
+The `unicode` (short-form `u`) command provides lookup of codepoints in a provided string. Input characters defined by
+the configuration option `ignore_chars` are ignored.
 
 Lookup uses [`unicodedata2`] if it is available, and falls back on [stdlib `unicodedata`] otherwise.
 
@@ -80,6 +80,8 @@ The [Unicode normalization forms] are available to transform input strings.
 
 [Unicode normalization forms]: https://unicode.org/reports/tr15/
 
+Input characters defined by the configuration option `ignore_chars` are ignored.
+
 ```
 <SnoopJ> !unicode:NFKD ça va
 < terribot> [unicode] (c): U+0063 v1.1 (Ll) LATIN SMALL LETTER C
@@ -129,4 +131,5 @@ generate_config_table(SopelUnicodeSection)
 | -------------------------- | ------------------------------------------ | ------------------ |
 | `max_length`               | Maximum length of Unicode string input     | 5                  |
 | `length_override_channels` | Channels where max_length does not apply   | []                 |
+| `ignore_characters`        | Characters ignored during lookup           | [' ']              |
 <!-- [[[end]]] -->
