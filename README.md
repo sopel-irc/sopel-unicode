@@ -122,8 +122,8 @@ and enter the values for which it prompts you.
 
 <!--[[[cog
 from tools.config_attrdoc_helper import generate_config_table
-from sopel_unicode.plugin import UnicodeSection
-generate_config_table(UnicodeSection)
+from sopel_unicode.plugin import SopelUnicodeSection
+generate_config_table(SopelUnicodeSection)
 ]]]-->
 | Field                      | Description                                | Default (if any)   |
 | -------------------------- | ------------------------------------------ | ------------------ |
