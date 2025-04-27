@@ -118,6 +118,14 @@ def unicode_summarize(bot, trigger):
 
 
 @PREFIX
+@plugin.commands("unicode:raw", "u:raw")
+def summarize_raw(bot, trigger):
+    s = trigger.group(2)
+
+    for c in s:
+        bot.say(describe_char(c))
+
+@PREFIX
 @plugin.commands(
     "unicode:NFC",
     "unicode:NFD",
