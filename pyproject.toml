@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=63.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
@@ -7,7 +7,7 @@ include = ["sopel_unicode", "sopel_unicode.*"]
 namespaces = false
 
 [tool.setuptools.dynamic]
-readme = { file=["README.rst", "NEWS"], content-type="text/x-rst" }
+readme = { file=["README.md", "NEWS"], content-type="text/markdown" }
 
 [project]
 name = "sopel-unicode"
@@ -25,14 +25,13 @@ dynamic = ["readme"]
 classifiers = [
     "Intended Audience :: Developers",
     "Intended Audience :: System Administrators",
-    "Operating System :: POSIX :: Linux",
+    "Topic :: Communications :: Chat :: Internet Relay Chat",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
-    "Topic :: Communications :: Chat :: Internet Relay Chat",
 ]
 keywords = [
   "sopel",
@@ -45,6 +44,7 @@ requires-python = ">=3.8, <4"
 dependencies = [
 #  "sopel>=8.0",
 ]
+
 [project.optional-dependencies]
 UCD = ["unicodedata2"]
 age = ["unicode_age"]
