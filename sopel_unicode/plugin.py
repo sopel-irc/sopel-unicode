@@ -10,7 +10,6 @@ from .impl import describe_char, unicodedata
 
 logger = logging.getLogger(__name__)
 
-MAX_LEN = 16
 PREFIX = plugin.output_prefix('[unicode] ')
 
 
