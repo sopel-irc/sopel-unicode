@@ -100,3 +100,15 @@ $ pip install sopel-unicode[all]
 The easiest way to configure `sopel-unicode` is via Sopel's
 configuration wizard—simply run `sopel-plugins configure sopel-unicode`
 and enter the values for which it prompts you.
+
+<!--[[[cog
+from tools.config_attrdoc_helper import generate_config_table
+from sopel_unicode.plugin import UnicodeSection
+generate_config_table(UnicodeSection)
+]]]-->
+| Field                      | Description                                | Default (if any)   |
+| -------------------------- | ------------------------------------------ | ------------------ |
+| `max_length`               | Maximum length of Unicode string input     | 5                  |
+| `length_override_channels` | Channels where max_length does not apply   | []                 |
+| `greeting`                 | Something friendly to say                  | 'Hello'            |
+<!-- [[[end]]] -->
