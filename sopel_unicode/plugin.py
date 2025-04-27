@@ -96,6 +96,7 @@ def unicode_search(bot, trigger):
 def unicode_summarize(bot, trigger):
     cmd = trigger.group(1)
     s = trigger.group(2)
+    s = drop_uninteresting_chars(s)
 
     prefix, rest = s[:2].lower(), s[2:]
     if prefix in ("u+", "0x", r"\u"):
