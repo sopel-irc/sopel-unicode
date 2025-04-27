@@ -18,7 +18,7 @@ class SopelUnicodeSection(types.StaticSection):
     """Maximum length of Unicode string input"""
     length_override_channels = types.ListAttribute('length_override_channels')
     """Channels where max_length does not apply"""
-    ignore_characters = types.ListAttribute('ignore_chars', default=[" "])
+    ignore_characters = types.ListAttribute('ignore_characters', default=[" "])
     """Characters ignored during lookup"""
     search_max_matches = types.ValidatedAttribute('search_max_matches', parse=int, default=10)
     """Maximum number of matches for a codepoint search"""
@@ -50,7 +50,7 @@ def too_long(bot, trigger, s: str) -> bool:
 
 
 def drop_uninteresting_chars(bot, s: str) -> str:
-    drop_chars = bot.config.sopel_unicode.uninteresting_chars
+    drop_chars = bot.config.sopel_unicode.ignore_characters
     return "".join(c for c in s if c not in drop_chars)
 
 
