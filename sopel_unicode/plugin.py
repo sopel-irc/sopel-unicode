@@ -58,9 +58,7 @@ def drop_uninteresting_chars(bot, s: str) -> str:
 @plugin.commands("unicode:search", "u:search")
 def unicode_search(bot, trigger):
     cmd = trigger.group(1)
-    cmd_arg = trigger.group(0)[len(cmd)+2:].replace(" ", "")
-
-    s = drop_uninteresting_chars(bot, cmd_arg)
+    query = trigger.group(0)[len(cmd)+2:]
 
     MAX_MATCHES = bot.config.sopel_unicode.search_max_matches
     NUM_PUBLIC_MATCHES = bot.config.sopel_unicode.search_num_public_matches
