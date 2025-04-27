@@ -1,5 +1,5 @@
 build: update-readme
-	python3 -m build
+	python -m build --sdist --wheel --outdir dist/ .
 
 update-readme:
 	cog -r README.md
