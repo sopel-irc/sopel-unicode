@@ -105,7 +105,7 @@ def unicode_summarize(bot, trigger):
         return True
 
     if too_long(bot, trigger, s):
-        bot.say(f"Whoa now, that's too many characters, hoss (max {bot.config.sopel_unicode.max_length})")
+        bot.say(f"Too many input characters (max {bot.config.sopel_unicode.max_length})")
         return False
 
     if cmd.endswith(":noascii"):
