@@ -13,3 +13,27 @@ This plugin is designed as a drop-in replacement for the built-in `unicode_info`
 [`unicodedata2`]: https://pypi.org/project/unicodedata2/
 [`unicode_age`]: https://pypi.org/project/unicode-age/
 
+## Installing
+
+Releases are hosted on PyPI, so after installing Sopel, all you need is `pip`:
+
+```shell
+$ pip install sopel-unicode
+```
+
+### Optional features
+
+`sopel-unicode` is designed to act as a drop-in replacement for the original built-in plugin on a basic installation.
+To enable all the optional features:
+
+```shell
+$ pip install sopel-unicode[all]
+```
+
+<!-- TODO:SnoopJ list and explain options for granular extras once CLDR is included -->
+
+## Configuring
+
+The easiest way to configure `sopel-unicode` is via Sopel's
+configuration wizard—simply run `sopel-plugins configure sopel-unicode`
+and enter the values for which it prompts you.
