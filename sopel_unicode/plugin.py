@@ -21,6 +21,12 @@ class SopelUnicodeSection(types.StaticSection):
     """Channels where max_length does not apply"""
 
 
+def configure(config):
+    config.define_section('sopel-unicode', SopelUnicodeSection)
+    config.foo.configure_setting('max_length', 'How many codepoints maximum in an lookup string?')
+    config.foo.configure_setting('length_override_channels', 'Which channels should bypass the maximum input length? Leave blank for none.')
+
+
 def setup(bot):
     bot.settings.define_section('sopel_unicode', SopelUnicodeSection)
 
