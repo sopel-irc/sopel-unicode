@@ -23,15 +23,15 @@ license-files = ["COPYING"]
 dynamic = ["readme"]
 
 classifiers = [
-    "Intended Audience :: Developers",
-    "Intended Audience :: System Administrators",
-    "Topic :: Communications :: Chat :: Internet Relay Chat",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
+  "Intended Audience :: Developers",
+  "Intended Audience :: System Administrators",
+  "Topic :: Communications :: Chat :: Internet Relay Chat",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
 ]
 keywords = [
   "sopel",
@@ -49,8 +49,8 @@ dependencies = [
 UCD = ["unicodedata2"]
 age = ["unicode_age"]
 all = [
-    "sopel-unicode[UCD]",
-    "sopel-unicode[age]",
+  "sopel-unicode[UCD]",
+  "sopel-unicode[age]",
 ]
 
 [project.urls]
