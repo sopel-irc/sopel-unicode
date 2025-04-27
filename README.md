@@ -127,9 +127,11 @@ from tools.config_attrdoc_helper import generate_config_table
 from sopel_unicode.plugin import SopelUnicodeSection
 generate_config_table(SopelUnicodeSection)
 ]]]-->
-| Field                      | Description                                | Default (if any)   |
-| -------------------------- | ------------------------------------------ | ------------------ |
-| `max_length`               | Maximum length of Unicode string input     | 5                  |
-| `length_override_channels` | Channels where max_length does not apply   | []                 |
-| `ignore_characters`        | Characters ignored during lookup           | [' ']              |
+| Field                       | Description                                                  | Default (if any)   |
+| --------------------------- | ------------------------------------------------------------ | ------------------ |
+| `max_length`                | Maximum length of Unicode string input                       | 5                  |
+| `length_override_channels`  | Channels where max_length does not apply                     | []                 |
+| `ignore_characters`         | Characters ignored during lookup                             | [' ']              |
+| `search_max_matches`        | Maximum number of matches for a codepoint search             | 10                 |
+| `search_num_public_matches` | Number of matches publicly reported for a codepoint search   | 2                  |
 <!-- [[[end]]] -->

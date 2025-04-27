@@ -20,6 +20,10 @@ class SopelUnicodeSection(types.StaticSection):
     """Channels where max_length does not apply"""
     ignore_characters = types.ListAttribute('ignore_chars', default=[" "])
     """Characters ignored during lookup"""
+    search_max_matches = types.ValidatedAttribute('search_max_matches', parse=int, default=10)
+    """Maximum number of matches for a codepoint search"""
+    search_num_public_matches = types.ValidatedAttribute('search_num_public_matches', parse=int, default=2)
+    """Number of matches publicly reported for a codepoint search"""
 
 
 def configure(config):
@@ -58,8 +62,8 @@ def unicode_search(bot, trigger):
 
     s = drop_uninteresting_chars(bot, cmd_arg)
 
-    MAX_MATCHES = 10
-    NUM_PUBLIC_MATCHES = 2
+    MAX_MATCHES = bot.config.sopel_unicode.search_max_matches
+    NUM_PUBLIC_MATCHES = bot.config.sopel_unicode.search_num_public_matches
 
     is_channel = trigger.sender and not trigger.sender.is_nick()
 
