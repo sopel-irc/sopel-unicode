@@ -92,4 +92,6 @@ def generate_config_table(config_cls: type):
     cog.outl(f"| {fieldcol: <{name_width}} | {doccol: <{doc_width}} | {defcol: <{def_width}} |")
     cog.outl(f"| {'-'*name_width} | {'-'*doc_width} | {'-'*def_width} |")
     for (name, doc) in config_fields.items():
-        cog.outl(f"| {'`' + name + '`': <{name_width}} | {doc: <{doc_width}} | {repr(defaults[name]): <{def_width}} |")
+        name_fmtd = f"`{name}`"
+        default_fmtd = f"`{defaults[name]!r}`"
+        cog.outl(f"| {name_fmtd: <{name_width}} | {doc: <{doc_width}} | {default_fmtd: <{def_width}} |")
