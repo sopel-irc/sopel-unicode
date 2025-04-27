@@ -74,7 +74,26 @@ many or as few hex digits as you like.
 < terribot> [unicode] (𒍅): U+12345 v5.0 (Lo) CUNEIFORM SIGN URU TIMES KI
 ```
 
-<!-- TODO:SnoopJ normalization forms, u:search (?) -->
+### Normalization forms
+
+The [Unicode normalization forms] are available to transform input strings.
+
+[Unicode normalization forms]: https://unicode.org/reports/tr15/
+
+```
+<SnoopJ> !unicode:NFKD ça va
+< terribot> [unicode] (c): U+0063 v1.1 (Ll) LATIN SMALL LETTER C
+< terribot> [unicode] (◌̧): U+0327 v1.1 (Mn) COMBINING CEDILLA
+< terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
+< terribot> [unicode] (v): U+0076 v1.1 (Ll) LATIN SMALL LETTER V
+< terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
+<SnoopJ> !u:NFKC ça va
+< terribot> [unicode] (ç): U+00E7 v1.1 (Ll) LATIN SMALL LETTER C WITH CEDILLA
+< terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
+< terribot> [unicode] (v): U+0076 v1.1 (Ll) LATIN SMALL LETTER V
+< terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
+```
+<!-- TODO?:SnoopJ u:search -->
 
 ## Installing
 
