@@ -95,7 +95,19 @@ Input characters defined by the configuration option `ignore_chars` are ignored.
 < terribot> [unicode] (v): U+0076 v1.1 (Ll) LATIN SMALL LETTER V
 < terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
 ```
-<!-- TODO?:SnoopJ u:search -->
+
+### Codepoint search
+
+A rudimentary search functionality is available. The maximum number of matches reported can be configured, as many
+queries produce a large number of results.
+
+```
+< SnoopJ> !unicode:search apple
+< terribot> [unicode] 3 results:
+< terribot> [unicode] 🍍 U+1f34d PINEAPPLE
+< terribot> [unicode] 🍎 U+1f34e RED APPLE
+< terribot> [unicode] 🍏 U+1f34f GREEN APPLE
+```
 
 ## Installing
 
