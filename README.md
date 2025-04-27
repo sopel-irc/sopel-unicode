@@ -110,5 +110,4 @@ generate_config_table(UnicodeSection)
 | -------------------------- | ------------------------------------------ | ------------------ |
 | `max_length`               | Maximum length of Unicode string input     | 5                  |
 | `length_override_channels` | Channels where max_length does not apply   | []                 |
-| `greeting`                 | Something friendly to say                  | 'Hello'            |
 <!-- [[[end]]] -->
