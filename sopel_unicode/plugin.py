@@ -70,11 +70,8 @@ def unicode_search(bot, trigger):
     if N_match == 0:
         bot.say("No results")
         return False
-    elif is_channel and N_match > MAX_MATCHES:
-        bot.say(f"Maximum number of results ({MAX_MATCHES}) exceeded, got {N_match}, giving up")
-        return False
-    else:
-        bot.say(f"{N_match} results:")
+
+    bot.say(f"{N_match} results:")
 
     names, codepoints = zip(*matches)
 
@@ -83,13 +80,14 @@ def unicode_search(bot, trigger):
             bot.say(f"{chr(codepoint)} U+{codepoint:04x} {name}", destination=dest)
 
     if trigger.sender.is_nick():
-        _say_matches(matches)
+        _say_matches(matches[:MAX_MATCHES])
+        N_excess = N_match - MAX_MATCHES
     else:
         _say_matches(matches[:NUM_PUBLIC_MATCHES])
-
         N_excess = N_match - NUM_PUBLIC_MATCHES
-        if N_excess > 0:
-            bot.say(f"{N_excess} other results")
+
+    if N_excess > 0:
+        bot.say(f"{N_excess} other results")
 
 
 # TODO: special handling for ZWJ sequences?
