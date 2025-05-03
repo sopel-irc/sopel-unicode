@@ -8,6 +8,7 @@ Distributed under the Eiffel Forum License, version 2, see COPYING
 from __future__ import annotations
 import ast
 import inspect
+from collections.abc import Iterable
 from sopel.config.types import BaseValidated
 
 import cog
@@ -74,7 +75,7 @@ def class_definition(cls: type) -> ast.ClassDef:
     return clsdef
 
 
-def generate_config_table(config_cls: type):
+def generate_config_table(config_cls: type) -> Iterable[str]:
     """
     Generate a Markdown table documenting the configuration of a Sopel plugin
     """
@@ -98,9 +99,9 @@ def generate_config_table(config_cls: type):
     doc_width = 2 + longest_doc
     def_width = 2 + longest_def
 
-    cog.outl(f"| {fieldcol: <{name_width}} | {doccol: <{doc_width}} | {defcol: <{def_width}} |")
-    cog.outl(f"| {'-'*name_width} | {'-'*doc_width} | {'-'*def_width} |")
+    yield f"| {fieldcol: <{name_width}} | {doccol: <{doc_width}} | {defcol: <{def_width}} |"
+    yield f"| {'-'*name_width} | {'-'*doc_width} | {'-'*def_width} |"
     for (name, doc) in config_fields.items():
         name_fmtd = f"`{name}`"
         default_fmtd = f"`{defaults[name]!r}`"
-        cog.outl(f"| {name_fmtd: <{name_width}} | {doc: <{doc_width}} | {default_fmtd: <{def_width}} |")
+        yield f"| {name_fmtd: <{name_width}} | {doc: <{doc_width}} | {default_fmtd: <{def_width}} |"

@@ -144,7 +144,8 @@ The easiest way to configure `sopel-unicode` is via Sopel's configuration wizard
 <!--[[[cog
 from tools.config_attrdoc_helper import generate_config_table
 from sopel_unicode.plugin import SopelUnicodeSection
-generate_config_table(SopelUnicodeSection)
+import cog
+for line in generate_config_table(SopelUnicodeSection): cog.outl(line)
 ]]]-->
 | Field                       | Description                                                  | Default (if any)   |
 | --------------------------- | ------------------------------------------------------------ | ------------------ |
