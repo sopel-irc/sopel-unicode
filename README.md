@@ -48,7 +48,7 @@ Lookup uses [`unicodedata2`] if it is available, and falls back on [stdlib `unic
 ```
 < SnoopJ> !unicode 🫩
 < terribot> [unicode] (🫩): U+1FAE9 v16.0 (So) FACE WITH BAGS UNDER EYES
-< SnoopJ> !u 🏴☠ 
+< SnoopJ> !u 🏴‍☠ 
 < terribot> [unicode] (🏴): U+1F3F4 v7.0 (So) WAVING BLACK FLAG
 < terribot> [unicode] (‍): U+200D v1.1 (Cf) ZERO WIDTH JOINER
 < terribot> [unicode] (☠): U+2620 v1.1 (So) SKULL AND CROSSBONES
