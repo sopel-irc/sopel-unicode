@@ -20,7 +20,7 @@ jobs:
           python -m pip install --user -r requirements-dev.txt
       - name: Build a binary wheel and a source tarball
         run: |
-          python -m build --sdist --wheel --outdir dist/ .
+          make build
       - name: Publish distribution to PyPI
         uses: pypa/gh-action-pypi-publish@81e9d935c883d0b210363ab89cf05f3894778450
         with:
