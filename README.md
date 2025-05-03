@@ -21,6 +21,15 @@ Releases are hosted on PyPI, so after installing Sopel, all you need is `pip`:
 $ pip install sopel-unicode
 ```
 
+### Disable built-in `unicode_info` plugin
+<!-- TODO:SnoopJ: remove this section once #1291 is closed https://github.com/sopel-irc/sopel/issues/1291 -->
+
+You should edit your [Sopel core config] to add `unicode_info` to the [`exclude` plugin list], otherwise you will
+get duplicated responses from both plugins.
+
+[Sopel core config]: https://sopel.chat/docs/run/configuration
+[`exclude` plugin list]: https://sopel.chat/docs/run/configuration#plugins
+
 ### Optional features
 
 `sopel-unicode` is designed to act as a drop-in replacement for the original built-in plugin on a basic installation.
