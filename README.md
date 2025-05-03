@@ -22,7 +22,7 @@ $ pip install sopel-unicode
 ```
 
 ### Disable built-in `unicode_info` plugin
-<!-- TODO:SnoopJ: remove this section once #1291 is closed https://github.com/sopel-irc/sopel/issues/1291 -->
+<!-- TODO:SnoopJ: remove this section once the built-in is removed from the core. Tracking(ish) issue: https://github.com/sopel-irc/sopel/issues/1291 -->
 
 You should edit your [Sopel core config] to add `unicode_info` to the [`exclude` plugin list], otherwise you will
 get duplicated responses from both plugins.
