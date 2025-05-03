@@ -46,50 +46,50 @@ Lookup uses [`unicodedata2`] if it is available, and falls back on [stdlib `unic
 [stdlib `unicodedata`]: https://docs.python.org/3/library/unicodedata.html
 
 ```
-< SnoopJ> !unicode 🫩
-< terribot> [unicode] (🫩): U+1FAE9 v16.0 (So) FACE WITH BAGS UNDER EYES
-< SnoopJ> !u 🏴‍☠ 
-< terribot> [unicode] (🏴): U+1F3F4 v7.0 (So) WAVING BLACK FLAG
-< terribot> [unicode] (‍): U+200D v1.1 (Cf) ZERO WIDTH JOINER
-< terribot> [unicode] (☠): U+2620 v1.1 (So) SKULL AND CROSSBONES
+<SnoopJ> !unicode 🫩
+<terribot> [unicode] (🫩): U+1FAE9 v16.0 (So) FACE WITH BAGS UNDER EYES
+<SnoopJ> !u 🏴‍☠ 
+<terribot> [unicode] (🏴): U+1F3F4 v7.0 (So) WAVING BLACK FLAG
+<terribot> [unicode] (‍): U+200D v1.1 (Cf) ZERO WIDTH JOINER
+<terribot> [unicode] (☠): U+2620 v1.1 (So) SKULL AND CROSSBONES
 ```
 
 It is sometimes convenient to discard all ASCII characters from lookup, which can be done with the
 `unicode:noascii`(`u:noascii`) command:
 
 ```
-< SnoopJ> !u:noascii ça va?
-< terribot> [unicode] (ç): U+00E7 v1.1 (Ll) LATIN SMALL LETTER C WITH CEDILLA
+<SnoopJ> !u:noascii ça va?
+<terribot> [unicode] (ç): U+00E7 v1.1 (Ll) LATIN SMALL LETTER C WITH CEDILLA
 ```
 
 The `unicode:raw` (`u:raw`) command is provided to avoid discarding *any* codepoints when performing lookup.
 
 ```
-< SnoopJ> !unicode:raw a b
-< terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
-< terribot> [unicode] ( ): U+0020 v1.1 (Zs) SPACE
-< terribot> [unicode] (b): U+0062 v1.1 (Ll) LATIN SMALL LETTER B
+<SnoopJ> !unicode:raw a b
+<terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
+<terribot> [unicode] ( ): U+0020 v1.1 (Zs) SPACE
+<terribot> [unicode] (b): U+0062 v1.1 (Ll) LATIN SMALL LETTER B
 ```
 
 Individual codepoints can also be looked up with hex notation, in either `U+NNNN` form, `0xNNNN` form, or `\uNNNN` form.
 
 ```
-< SnoopJ> !unicode U+037E
-< terribot> [unicode] (;): U+037E v1.1 (Po) GREEK QUESTION MARK
-< SnoopJ> !u 0xBEEF
-< terribot> [unicode] (뻯): U+BEEF v2.0 (Lo) HANGUL SYLLABLE BBEGS
-< SnoopJ> !u \u732b
-< terribot> [unicode] (猫): U+732B v1.1 (Lo) CJK UNIFIED IDEOGRAPH-732B
+<SnoopJ> !unicode U+037E
+<terribot> [unicode] (;): U+037E v1.1 (Po) GREEK QUESTION MARK
+<SnoopJ> !u 0xBEEF
+<terribot> [unicode] (뻯): U+BEEF v2.0 (Lo) HANGUL SYLLABLE BBEGS
+<SnoopJ> !u \u732b
+<terribot> [unicode] (猫): U+732B v1.1 (Lo) CJK UNIFIED IDEOGRAPH-732B
 ```
 
 Note that the `\u` notation is *not restricted* in the same way as the same notation for Python literals. You may use as
 many or as few hex digits as you like.
 
 ```
-< SnoopJ> !u \u1
-< terribot> [unicode] (): U+0001 v1.1 (Cc) START OF HEADING
-< SnoopJ> !u \u12345
-< terribot> [unicode] (𒍅): U+12345 v5.0 (Lo) CUNEIFORM SIGN URU TIMES KI
+<SnoopJ> !u \u1
+<terribot> [unicode] (): U+0001 v1.1 (Cc) START OF HEADING
+<SnoopJ> !u \u12345
+<terribot> [unicode] (𒍅): U+12345 v5.0 (Lo) CUNEIFORM SIGN URU TIMES KI
 ```
 
 ### Normalization forms
@@ -102,16 +102,16 @@ Input characters defined by the configuration option `ignore_chars` are ignored.
 
 ```
 <SnoopJ> !unicode:NFKD ça va
-< terribot> [unicode] (c): U+0063 v1.1 (Ll) LATIN SMALL LETTER C
-< terribot> [unicode] (◌̧): U+0327 v1.1 (Mn) COMBINING CEDILLA
-< terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
-< terribot> [unicode] (v): U+0076 v1.1 (Ll) LATIN SMALL LETTER V
-< terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
+<terribot> [unicode] (c): U+0063 v1.1 (Ll) LATIN SMALL LETTER C
+<terribot> [unicode] (◌̧): U+0327 v1.1 (Mn) COMBINING CEDILLA
+<terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
+<terribot> [unicode] (v): U+0076 v1.1 (Ll) LATIN SMALL LETTER V
+<terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
 <SnoopJ> !u:NFKC ça va
-< terribot> [unicode] (ç): U+00E7 v1.1 (Ll) LATIN SMALL LETTER C WITH CEDILLA
-< terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
-< terribot> [unicode] (v): U+0076 v1.1 (Ll) LATIN SMALL LETTER V
-< terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
+<terribot> [unicode] (ç): U+00E7 v1.1 (Ll) LATIN SMALL LETTER C WITH CEDILLA
+<terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
+<terribot> [unicode] (v): U+0076 v1.1 (Ll) LATIN SMALL LETTER V
+<terribot> [unicode] (a): U+0061 v1.1 (Ll) LATIN SMALL LETTER A
 ```
 
 ### Codepoint search
@@ -120,11 +120,11 @@ A rudimentary search functionality is available. The maximum number of matches r
 queries produce a large number of results.
 
 ```
-< SnoopJ> !unicode:search apple
-< terribot> [unicode] 3 results:
-< terribot> [unicode] 🍍 U+1f34d PINEAPPLE
-< terribot> [unicode] 🍎 U+1f34e RED APPLE
-< terribot> [unicode] 🍏 U+1f34f GREEN APPLE
+<SnoopJ> !unicode:search apple
+<terribot> [unicode] 3 results:
+<terribot> [unicode] 🍍 U+1f34d PINEAPPLE
+<terribot> [unicode] 🍎 U+1f34e RED APPLE
+<terribot> [unicode] 🍏 U+1f34f GREEN APPLE
 ```
 
 ## Configuring
