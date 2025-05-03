@@ -80,6 +80,10 @@ def _char_name(char: str) -> tuple[str, str]:
     try:
         name = unicodedata.name(char)
     except ValueError:
+        # NOTE:CPython's representation of the UCD does not account for the names of
+        # some codepoints and will raise in some cases when a reasonable name can be
+        # reported. This generally applies to entire contiguous blocks, so here we
+        # test if the codepoint falls in one of these blocks
         if codept in UNICODE_V1_NAMES:
             name = UNICODE_V1_NAMES[codept]
         elif category == "Co":
