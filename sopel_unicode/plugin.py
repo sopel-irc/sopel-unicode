@@ -1,3 +1,10 @@
+"""
+sopel-unicode
+
+Plugin for information lookup on Unicode codepoints
+
+Distributed under the Eiffel Forum License, version 2, see COPYING
+"""
 from __future__ import annotations
 import logging
 from typing import Iterable

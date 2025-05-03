@@ -1,3 +1,10 @@
+"""
+config_attrdoc_helper.py
+
+A helper to generate a Markdown table of Sopel plugin configuration options, including PEP 257 attribute docstrings
+
+Distributed under the Eiffel Forum License, version 2, see COPYING
+"""
 from __future__ import annotations
 import ast
 import inspect
