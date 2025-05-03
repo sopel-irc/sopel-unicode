@@ -27,6 +27,8 @@ class ClassAttrDocVisitor(ast.NodeVisitor):
     def _assigns_with_doc(klass, cls: ast.ClassDef) -> Iterable[ast.Node]:
         for cur, nxt in zip(cls.body, cls.body[1:]):
             # NOTE: PEP 257 defines attribute docstrings as explicitly after simple (1 target) assignments
+            # Note also that this accepts an assignment and string literal separated by any number of blank lines, and
+            # I am not sure if these are considered standard-compliant
             if isinstance(cur, ast.Assign) and len(cur.targets) == 1 and klass._is_string_literal(nxt):
                 yield (cur, nxt.value.value)
 
