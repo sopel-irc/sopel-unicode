@@ -2,7 +2,7 @@
 
 [Sopel] plugin for information lookup on Unicode codepoints.
 
-This plugin is designed as a drop-in replacement for the built-in `unicode_info` plugin.
+This plugin is designed as a drop-in replacement for the built-in `unicode_info` plugin. It provides:
 
 * The [General Category] of each codepoint
 * Optional support for Unicode Character Database (UCD) versions newer than the Python release used to run Sopel, if [`unicodedata2`] is available
