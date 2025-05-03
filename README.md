@@ -86,9 +86,9 @@ Note that the `\u` notation is *not restricted* in the same way as the same nota
 many or as few hex digits as you like.
 
 ```
-< SnoopJ> !u \1
+< SnoopJ> !u \u1
 < terribot> [unicode] (): U+0001 v1.1 (Cc) START OF HEADING
-< SnoopJ> !u \12345
+< SnoopJ> !u \u12345
 < terribot> [unicode] (𒍅): U+12345 v5.0 (Lo) CUNEIFORM SIGN URU TIMES KI
 ```
 
