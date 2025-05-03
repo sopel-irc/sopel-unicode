@@ -1,2 +1,4 @@
 build
 cogapp>=3.4, <4
+# NOTE:SnoopJ:Sopel is a development requirement to extract plugin configuration information
+sopel>=8.0
