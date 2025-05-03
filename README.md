@@ -129,9 +129,8 @@ queries produce a large number of results.
 
 ## Configuring
 
-The easiest way to configure `sopel-unicode` is via Sopel's
-configuration wizard—simply run `sopel-plugins configure sopel-unicode`
-and enter the values for which it prompts you.
+The easiest way to configure `sopel-unicode` is via Sopel's configuration wizard—simply run
+`sopel-plugins configure sopel-unicode` and enter the values for which it prompts you.
 
 <!--[[[cog
 from tools.config_attrdoc_helper import generate_config_table
