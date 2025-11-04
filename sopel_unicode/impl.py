@@ -45,7 +45,7 @@ def describe_char(char: str) -> str:
     try:
         major, minor = unicode_version(codept)
         ver_str = f"v{major}.{minor} "
-    except RuntimeError:
+    except (ValueError, RuntimeError):
         ver_str = ""
 
     try:
