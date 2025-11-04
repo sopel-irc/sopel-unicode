@@ -100,6 +100,7 @@ def unicode_search(bot, trigger):
 # TODO: special handling for ZWJ sequences?
 @PREFIX
 @plugin.commands("unicode", "u", "unicode:noascii", "u:noascii")
+@plugin.example("!u 猫", "[unicode] (猫): U+732B (Lo) CJK UNIFIED IDEOGRAPH-732B")
 def unicode_summarize(bot, trigger):
     cmd = trigger.group(1)
     s = trigger.group(2)
